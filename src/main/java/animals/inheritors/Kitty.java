@@ -29,11 +29,11 @@ public class Kitty extends Animal {
     public void eatFood(EatCharacteristic eatCharacteristic) {
         if (kittyCat.getWeight() == 0.0) {
             log.warn("Cat is concerned about lack of food!");
-        } else if (kittyCat.getWeight() > eatCharacteristic.getEatedFoodAmount()) {
-            kittyCat.setWeight(kittyCat.getWeight() - eatCharacteristic.getEatedFoodAmount());//todo
+        } else if (kittyCat.getWeight() > eatCharacteristic.getAmountFoodEaten()) {
+            kittyCat.setWeight(kittyCat.getWeight() - eatCharacteristic.getAmountFoodEaten());
             log.info("Cat has eaten!");
         } else {//todo
-            double neededFood = eatCharacteristic.getEatedFoodAmount() - kittyCat.getWeight();//todo
+            double neededFood = eatCharacteristic.getAmountFoodEaten() - kittyCat.getWeight();//todo
             log.info(String.format("animal.cat.Kitty has eaten, but there was not enough %f g. of food!", neededFood));//todo
             kittyCat.setWeight(0);//todo
         }

@@ -1,8 +1,8 @@
 package property.holder;
 
-import org.aeonbits.owner.Converter;
-
 import java.lang.reflect.Method;
+import enumerations.CuteLevel;
+import org.aeonbits.owner.Converter;
 
 public class CuteLevelConverter implements Converter<CuteLevel> {
     public CuteLevel convert(Method method, String s) {

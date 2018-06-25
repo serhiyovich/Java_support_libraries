@@ -8,7 +8,7 @@ import lombok.Getter;
 @Getter
 @Builder(builderClassName = "FoodCollector", buildMethodName = "createCharacteristic")
 public class EatCharacteristic {
-    private double eatedFoodAmount;
+    private double amountFoodEaten;
     private DayPart dayPart;
     private CatPosition catPosition;
 }
