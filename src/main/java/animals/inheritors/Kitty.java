@@ -34,7 +34,7 @@ public class Kitty extends Animal {
             log.info("Cat has eaten!");
         } else {//todo
             double neededFood = eatCharacteristic.getAmountFoodEaten() - kittyCat.getWeight();//todo
-            log.info(String.format("animal.cat.Kitty has eaten, but there was not enough %f g. of food!", neededFood));//todo
+            log.info(String.format("Kitty has eaten, but there was not enough %f g. of food!", neededFood));//todo
             kittyCat.setWeight(0);//todo
         }
     }

@@ -12,9 +12,9 @@ import org.apache.log4j.BasicConfigurator;
 public class Main {
     public static void main(String[] args) {
         BasicConfigurator.configure();
-        Kitty kitty  = new Kitty("Puh",5);
+        Kitty kitty = new Kitty("Puh", 5);
         kitty.getCuteLevel();
-        kitty.setOwner(new Owner(){//todo
+        kitty.setOwner(new Owner() {//todo
             {
                 setFirstName("Vitalii");
                 setSecondName("Shramko");
@@ -22,7 +22,7 @@ public class Main {
             }
         });
         kitty.setCuteLevel(CuteLevel.GOOD_CAT);
-        kitty.setKittyCat(new KittyCat("meat",600));
+        kitty.setKittyCat(new KittyCat("meat", 600));//todo
 
         /*Owner owner = new Owner();
         owner.setFirstName("Vitalii");
@@ -30,13 +30,23 @@ public class Main {
 
         kitty.getOwner();*/
 
-        KittyCat kittyCat = new KittyCat("meat",600);
-        EatCharacteristic eatCharacteristic = EatCharacteristic.builder()
-                .amountFoodEaten(200)
+//        KittyCat kittyCat = new KittyCat("meat", 600);
+        EatCharacteristic fullPlateOfFood = EatCharacteristic.builder()
+                .amountFoodEaten(400)
                 .catPosition(CatPosition.SIT)
                 .dayPart(DayPart.DAY)
                 .createCharacteristic();
-        kitty.eatFood(eatCharacteristic);
+
+        EatCharacteristic emptyPlateOfFood = EatCharacteristic.builder()
+                .amountFoodEaten(400)
+                .catPosition(CatPosition.SIT)
+                .dayPart(DayPart.DAY)
+                .createCharacteristic();
+        
+        kitty.eatFood(fullPlateOfFood);
+        kitty.eatFood(emptyPlateOfFood);
+        kitty.eatFood(emptyPlateOfFood);
+
         kitty.killCat();
     }
 }
